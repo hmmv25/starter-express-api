@@ -17,33 +17,4 @@ router.post('/sap/bc/srt/scs_ext/sap/fixedassetcreatemain', (req, res, next) => 
   }
 });
 
-// XML tester page
-router.get('/xml2js/xml-tester', (req, res, next) => {
-  res.render('xml-tester', { 
-    sampleXmlRequest: 
-`<sessionInfo id="45664434343">
-  <customerId>39399444</customerId>
-  <customerName>Bob Smith</customerName>
-  <token>343ldf0bk343bz43lddd</token>
-</sessionInfo>`
-   });
-});
-
-// XML tester endpoint to send XML messages to
-router.post('/xml2js/xml-tester', (req, res, next) => {
-  console.log('Request received: ' + JSON.stringify(req.body));
-  if (req.body.sessionInfo) {
-    var sessionid = req.body.sessionInfo['$'].id;
-    console.log(`Request received with sessionid ${sessionid}`);
-    res.send(
-`<sessionEstablished>
-  <originalSessionid>${sessionid}</originalSessionid>
-  <newSessionId>3434k34k34k3fdafafd</newSessionId>
-</sessionEstablished>`);
-  } else {
-    throw 'Unexpected request body received'
-  }
-});
-
-
 module.exports = router;
