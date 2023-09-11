@@ -9,12 +9,7 @@ router.get('/xml2js/', function(req, res, next) {
 router.post('/sap/bc/srt/scs_ext/sap/fixedassetcreatemain', (req, res, next) => {
   console.log('Raw XML: ' + req.rawBody);
   //console.log('Parsed XML: ' + JSON.stringify(req.body));
-  if (req.body.retrieveCustomer) {
-    var id = req.body.retrieveCustomer.id;
-    res.send(`<customer><id>${id}</id><fullName>Bob Smith</fullName></customer>`);
-  } else {
-    res.status(400).send('Unexpected XML received, missing <retrieveCustomer> tag');
-  }
+  res.status(200).send(req.rawBody);
 });
 
 module.exports = router;
