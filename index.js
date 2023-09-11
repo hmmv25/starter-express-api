@@ -21,6 +21,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(xmlparser());
 
+app.use('/', xml2jsRouter);
+
 app.all('/', (req, res) => {
     console.log("Just got a request!")
     res.send('Yo 1234567')
