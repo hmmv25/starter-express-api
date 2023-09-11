@@ -12,7 +12,7 @@ router.post('/sap/bc/srt/scs_ext/sap/fixedassetcreatemain', (req, res, next) => 
 });
 
 router.post('/sap/bc/srt/scs/sap/businesspartnersuitebulkreplic', (req, res, next) => {
-  console.log('Raw BP XML: ' + req.rawBody);
+  //console.log('Raw BP XML: ' + req.rawBody);
   //console.log('Parsed XML: ' + JSON.stringify(req.body));
   res.status(200).send(req.rawBody);
 });
