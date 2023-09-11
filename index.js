@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const http = require('http');
+const debug = require('debug')('myapp:server');
 
 var port = normalizePort(process.env.PORT || '3000');
 
