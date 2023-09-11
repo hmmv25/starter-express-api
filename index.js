@@ -7,6 +7,8 @@ const app = express()
 const http = require('http');
 const debug = require('debug')('myapp:server');
 
+var xml2jsRouter = require('./routes/xml2js');
+
 var port = normalizePort(process.env.PORT || '3000');
 
 app.set('port', port);
@@ -15,7 +17,7 @@ var server = http.createServer(app);
 
 app.all('/', (req, res) => {
     console.log("Just got a request!")
-    res.send('Yo 12345')
+    res.send('Yo 123456')
 })
 
 //app.listen(process.env.PORT || 3000)
