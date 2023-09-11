@@ -10,7 +10,7 @@ var server = http.createServer(app);
 
 app.all('/', (req, res) => {
     console.log("Just got a request!")
-    res.send('Yo 1')
+    res.send('Yo 12')
 })
 
 //app.listen(process.env.PORT || 3000)
@@ -64,3 +64,5 @@ function onListening() {
 }
 
 server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
