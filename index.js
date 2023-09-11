@@ -1,6 +1,8 @@
 const createError = require('http-errors');
 const express = require('express')
 const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const xmlparser = require('express-xml-bodyparser');
 const app = express()
 const http = require('http');
 const debug = require('debug')('myapp:server');
@@ -13,7 +15,7 @@ var server = http.createServer(app);
 
 app.all('/', (req, res) => {
     console.log("Just got a request!")
-    res.send('Yo 1234')
+    res.send('Yo 12345')
 })
 
 //app.listen(process.env.PORT || 3000)
