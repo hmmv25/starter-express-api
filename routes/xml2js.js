@@ -17,4 +17,46 @@ router.post('/sap/bc/srt/scs/sap/businesspartnersuitebulkreplic', (req, res, nex
   res.status(200).send(req.rawBody);
 });
 
+//External Tax - Determine Tax Jurisdiction Codes
+router.post('/CO_TAX_JURI_DETER_SPRX', (req, res, next) => {
+  console.log('Raw BP XML: ' + req.rawBody);
+  //console.log('Parsed XML: ' + JSON.stringify(req.body));
+  res.status(200).send(req.rawBody);
+});
+
+//External Tax - Calculate Taxes
+router.post('/CO_TAX_CALCULATION_SPRX', (req, res, next) => {
+  console.log('Raw BP XML: ' + req.rawBody);
+  //console.log('Parsed XML: ' + JSON.stringify(req.body));
+  res.status(200).send(req.rawBody);
+});
+
+//External Tax - Update Tax Documents
+router.post('/CO_TAX_UPDATE_SPRX', (req, res, next) => {
+  console.log('Raw BP XML: ' + req.rawBody);
+  //console.log('Parsed XML: ' + JSON.stringify(req.body));
+  res.status(200).send(req.rawBody);
+});
+
+//External Tax - Force Update Tax Documents
+router.post('/CO_TAX_FORCE_UPDATE_SPRX', (req, res, next) => {
+  console.log('Raw BP XML: ' + req.rawBody);
+  //console.log('Parsed XML: ' + JSON.stringify(req.body));
+  res.status(200).send(req.rawBody);
+});
+
+//External Tax - Get Changed Jurisdiction Code List
+router.post('/CO_TAX_JURI_GET_CHANGE_LIST_SPRX', (req, res, next) => {
+  console.log('Raw BP XML: ' + req.rawBody);
+  //console.log('Parsed XML: ' + JSON.stringify(req.body));
+  res.status(200).send(req.rawBody);
+});
+
+//External Tax - Mass Redefine Tax Jurisdiction Code
+router.post('/CO_TAX_JURI_REDEFINE_SPRX', (req, res, next) => {
+  console.log('Raw BP XML: ' + req.rawBody);
+  //console.log('Parsed XML: ' + JSON.stringify(req.body));
+  res.status(200).send(req.rawBody);
+});
+
 module.exports = router;
