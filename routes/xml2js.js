@@ -35,10 +35,10 @@ router.post('/CO_TAX_JURI_DETER_SPRX', (req, res, next) => {
 router.post('/CO_TAX_CALCULATION_SPRX', (req, res, next) => {
   //console.log('Parsed XML: ' + JSON.stringify(req.body));
   //res.status(200).send(req.rawBody);
- 
-  console.log('External Tax - Calculate Taxes: ' + req.rawBody);
+  //console.log('External Tax - Calculate Taxes: ' + req.rawBody);
+  
   res.set('content-type', 'text/xml; charset=utf-8');
-  res.send('<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/"><soap-env:Header/><soap-env:Body><n0:TAX_CALCULATION_RECEIVE xmlns:n0="http://sap.com/xi/FotETaxUS" xmlns:prx="urn:sap.com:proxy:X0E:/1SAI/TASDF77D1920401C19CDDE8:793"><CALCULATION_RESULT_HEADER><API_VERSION>1</API_VERSION><SYST_VERSION/><DB_VERSION/><RETCODE>0</RETCODE><ERROR_LINE/><ERRORCODE/><ERRMSG/></CALCULATION_RESULT_HEADER><CALCULATION_RESULT_ITEM><ITEM_NO>000001</ITEM_NO><TXJCD_IND>A</TXJCD_IND><TXJCD_DES>Jurisdiction Code Description</TXJCD_DES><TAX_DATE>20230920</TAX_DATE><TAXPCOV/><TAXAMOV>100</TAXAMOV><EXMATFLAG/><EXCUSFLG/><EXT_EXCERTIF/><EXT_EXREASON/><NR_JUR_LEVELS/></CALCULATION_RESULT_ITEM><RESULT_ITEM_JUR><ITEM_NO>000001</ITEM_NO><TXJLV>1</TXJLV><TXJLVDESC>Jurisdiction Area Description</TXJLVDESC><TXJCD>XPTOSUHAS1</TXJCD><TAX_STATE>GA</TAX_STATE><SOURCING>1</SOURCING><TAXPCT/><TAXAMT>100</TAXAMT><TAXBAS>100000</TAXBAS><EXAMT/><EXCODE/></RESULT_ITEM_JUR></n0:TAX_CALCULATION_RECEIVE></soap-env:Body></soap-env:Envelope>');
+  res.send('<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/"><soap-env:Header/><soap-env:Body><n0:TAX_CALCULATION_RECEIVE xmlns:n0="http://sap.com/xi/FotETaxUS" xmlns:prx="urn:sap.com:proxy:X0E:/1SAI/TASDF77D1920401C19CDDE8:793"><CALCULATION_RESULT_HEADER><API_VERSION>1</API_VERSION><SYST_VERSION/><DB_VERSION/><RETCODE>0</RETCODE><ERROR_LINE/><ERRORCODE/><ERRMSG/></CALCULATION_RESULT_HEADER><CALCULATION_RESULT_ITEM><ITEM_NO>000001</ITEM_NO><TXJCD_IND>A</TXJCD_IND><TAXAMOV>100</TAXAMOV></CALCULATION_RESULT_ITEM><RESULT_ITEM_JUR><ITEM_NO>000001</ITEM_NO><TXJLV>1</TXJLV><SOURCING>1</SOURCING><TAXAMT>100</TAXAMT><TAXBAS>100000</TAXBAS></RESULT_ITEM_JUR></n0:TAX_CALCULATION_RECEIVE></soap-env:Body></soap-env:Envelope>');
 });
 
 //External Tax - Update Tax Documents
