@@ -19,7 +19,7 @@ router.post('/sap/bc/srt/scs/sap/businesspartnersuitebulkreplic', (req, res, nex
 
 //External Tax - Determine Tax Jurisdiction Codes
 router.post('/CO_TAX_JURI_DETER_SPRX', (req, res, next) => {
-  console.log('External Tax - Determine Tax Jurisdiction Codes: ' + req.rawBody);
+  //console.log('External Tax - Determine Tax Jurisdiction Codes: ' + req.rawBody);
   //console.log('Parsed XML: ' + JSON.stringify(req.body));
   //res.status(200).send(req.rawBody);
   //res.set('content-type', 'application/soap+xml; charset=utf-8');
@@ -32,7 +32,8 @@ router.post('/CO_TAX_JURI_DETER_SPRX', (req, res, next) => {
 router.post('/CO_TAX_CALCULATION_SPRX', (req, res, next) => {
   console.log('External Tax - Calculate Taxes: ' + req.rawBody);
   //console.log('Parsed XML: ' + JSON.stringify(req.body));
-  res.status(200).send(req.rawBody);
+  //res.status(200).send(req.rawBody);
+  res.set('content-type', 'text/xml; charset=utf-8');
 });
 
 //External Tax - Update Tax Documents
