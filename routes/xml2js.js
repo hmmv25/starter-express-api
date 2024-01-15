@@ -5,7 +5,42 @@ router.get('/xml2js/', function(req, res, next) {
   res.render('xml2js', {});
 });
 
+router.post('/sap/edicom/cfdiservice', (req, res, next) => {
+  //console.log('Parsed XML: ' + JSON.stringify(req.body));
+
+  console.log('Raw BP XML: ' + req.rawBody);
+  res.status(200).send(req.rawBody);
+});
+
+router.post('/sap/edicom/cfdi4wth', (req, res, next) => {
+  //console.log('Parsed XML: ' + JSON.stringify(req.body));
+
+  console.log('Raw BP XML: ' + req.rawBody);
+  res.status(200).send(req.rawBody);
+});
+
+router.post('/sap/edicom/cfdi3', (req, res, next) => {
+  //console.log('Parsed XML: ' + JSON.stringify(req.body));
+
+  console.log('Raw BP XML: ' + req.rawBody);
+  res.status(200).send(req.rawBody);
+});
+
+router.post('/sap/edicom/cfdi2', (req, res, next) => {
+  //console.log('Parsed XML: ' + JSON.stringify(req.body));
+
+  console.log('Raw BP XML: ' + req.rawBody);
+  res.status(200).send(req.rawBody);
+});
+
 router.post('/sap/edicom/cfdi4', (req, res, next) => {
+  //console.log('Parsed XML: ' + JSON.stringify(req.body));
+
+  console.log('Raw BP XML: ' + req.rawBody);
+  res.status(200).send(req.rawBody);
+});
+
+router.post('/sap/edicom/cfdi41', (req, res, next) => {
   //console.log('Parsed XML: ' + JSON.stringify(req.body));
 
   console.log('Raw BP XML: ' + req.rawBody);
