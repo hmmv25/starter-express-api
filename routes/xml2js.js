@@ -5,6 +5,11 @@ router.get('/xml2js/', function(req, res, next) {
   res.render('xml2js', {});
 });
 
+router.post('/sap/payment', (req, res, next) => {
+  console.log('Raw Payment XML: ' + req.rawBody);
+  res.status(200).send(req.rawBody);
+});
+
 router.post('/sap/edicom/cfdiservice', (req, res, next) => {
   //console.log('Parsed XML: ' + JSON.stringify(req.body));
 
