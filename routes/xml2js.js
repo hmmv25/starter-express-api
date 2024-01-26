@@ -67,8 +67,6 @@ router.post('/sap/ago-sap-p2p-odata-api-v1-vrs/API_BUSINESS_PARTNER/$batch', (re
 });
 
 router.post('/sap/bc/srt/scs/sap/businesspartnersuitebulkreplic', (req, res, next) => {
-  //console.log('Parsed XML: ' + JSON.stringify(req.body));
-
   console.log('Raw BP XML: ' + req.rawBody);
   res.status(200).send(req.rawBody);
 });
