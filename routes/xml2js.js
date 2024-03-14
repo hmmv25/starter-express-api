@@ -6,7 +6,7 @@ router.get('/xml2js/', function(req, res, next) {
 });
 
 router.post('/peoplesoft/ago-eip-peoplesoft-paymentinformation-v1-vs', (req, res, next) => {
-	const cert = req.connection.getPeerCertificate();
+	const cert = req.socket.getPeerCertificate();
   	const certbase64 = req.socket.getPeerCertificate(true).raw.toString('base64');
 	console.log('cert: ' + cert);
 	console.log('certbase64: ' + certbase64);
