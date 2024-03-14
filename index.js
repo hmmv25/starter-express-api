@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const xmlparser = require('express-xml-bodyparser');
 const app = express()
-const http = require('http');
+const http = require('https');
 const debug = require('debug')('myapp:server');
 
 var xml2jsRouter = require('./routes/xml2js');
