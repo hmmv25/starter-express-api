@@ -5,6 +5,25 @@ router.get('/xml2js/', function(req, res, next) {
   res.render('xml2js', {});
 });
 
+router.post('/sap/paymentcert', (req, res, next) => {
+  console.log('Raw Payment XML: ' + req.rawBody);
+  const cert = req.connection.getPeerCertificate();
+  const certbase64 = req.socket.getPeerCertificate(true).raw.toString('base64');
+
+  if (req.client.authorized) {
+	  //res.send(`Hello ${cert.subject.CN}, your certificate was issued by ${cert.issuer.CN}!`)
+    console.log(`Hello ${cert.subject.CN}, your certificate was issued by ${cert.issuer.CN}!`);
+  } else if (cert.subject) {
+	  //res.status(403).send(`Sorry ${cert.subject.CN}, certificates from ${cert.issuer.CN} are not welcome here.`)
+    console.log(`Sorry ${cert.subject.CN}, certificates from ${cert.issuer.CN} are not welcome here.`);
+  } else {
+		//res.status(401).send(`Sorry, but you need to provide a client certificate to continue.`)
+    console.log(`Sorry, but you need to provide a client certificate to continue.`);
+	}
+    
+  res.status(200).send(req.rawBody);
+});
+
 router.post('/sap/payment', (req, res, next) => {
   console.log('Raw Payment XML: ' + req.rawBody);
   res.status(200).send(req.rawBody);
