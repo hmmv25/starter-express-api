@@ -5,7 +5,7 @@ router.get('/xml2js/', function(req, res, next) {
   res.render('xml2js', {});
 });
 
-router.post('/sap/paymentcert', (req, res, next) => {
+router.post('/peoplesoft/ago-eip-peoplesoft-paymentinformation-v1-vs', (req, res, next) => {
   console.log('Raw Payment XML: ' + req.rawBody);
   const cert = req.connection.getPeerCertificate();
   const certbase64 = req.socket.getPeerCertificate(true).raw.toString('base64');
