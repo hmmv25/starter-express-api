@@ -6,13 +6,12 @@ router.get('/xml2js/', function(req, res, next) {
 });
 
 router.post('/peoplesoft/ago-eip-peoplesoft-paymentinformation-v1-vs', (req, res, next) => {
-  console.log('Raw Payment XML: ' + req.rawBody);
-  const cert = req.connection.getPeerCertificate();
-  const certbase64 = req.socket.getPeerCertificate(true).raw.toString('base64');
-
-console.log('cert: ' + cert);
+	const cert = req.connection.getPeerCertificate();
+  	const certbase64 = req.socket.getPeerCertificate(true).raw.toString('base64');
+	console.log('cert: ' + cert);
 	console.log('certbase64: ' + certbase64);
-	
+	console.log('Raw Payment XML: ' + req.rawBody);
+  	
   if (req.client.authorized) {
 	  //res.send(`Hello ${cert.subject.CN}, your certificate was issued by ${cert.issuer.CN}!`)
     console.log(`Hello ${cert.subject.CN}, your certificate was issued by ${cert.issuer.CN}!`);
